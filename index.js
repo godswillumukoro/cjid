@@ -5,9 +5,9 @@ const storiesRoutes = require('./routes/storiesRoutes');
 const dataRoutes = require('./routes/dataRoutes');
 
 const app = express();
-// $PORT= 5000
-// $DATABASE_URL = mongodb+srv://dang:yNyhex2BozJPiut1@cluster0.q8fh9.mongodb.net/blurga?retryWrites=true&w=majority
-// const dbURI = 'mongodb://127.0.0.1:27017/node-netninja';
+// $PORT= 5000 heroku
+// $DATABASE_URL = heroku
+// const dbURI = local 'mongodb://127.0.0.1:27017/node-netninja';
 const dbURI = 'mongodb://127.0.0.1:27017/cjid';
 mongoose
   .connect(dbURI)
