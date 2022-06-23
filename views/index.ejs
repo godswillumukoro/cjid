@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/main.css">
-    <title>CJID</title>
-</head>
-
-<body>
-    <header>
-        <nav class="main-navigation">
-            <div class="container flex">
-                <div class="main-navigation__first">
-                    <a href="#"><img class="logo" src="./assets/img/logo/01.png" alt="CJID Logo"></a>
-                    <a href="#" class="sign-in">
-                        <ion-icon name="person-sharp" size="large"></ion-icon>
-                        Sign In
-                    </a>
-                </div>
-                <div class="main-navigation__second">
-                    <a href="#">Home</a>
-                    <a href="#">Reports</a>
-                    <a href="#">Stories</a>
-                    <a href="#">Data</a>
-                    <a href="#">About</a>
-                    <form action="#" class="search-form">
-                        <input type="text" name="search" id="search" placeholder="Search for reports and stories">
-                        <input type="submit" value="submit">
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
+   <%- include('./partials/header') %>
+   <%- include('./partials/nav') %>
 
     <section class="main-articles">
         <div class="container flex">
@@ -45,7 +11,7 @@
                 </article>
                 <div class="flex mgb-2">
                     <article class="image-card">
-                        <img src="./assets/img/articles/02.jpg" alt="">
+                        <img src="./img/articles/02.jpg" alt="">
                         <div class="image_card__content">
                             <h2 class="mgb-1">Two</h2>
                             <p class="mgb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
@@ -56,7 +22,7 @@
                         </div>
                     </article>
                     <article class="image-card">
-                        <img src="./assets/img/articles/03.jpg" alt="">
+                        <img src="./img/articles/03.jpg" alt="">
                         <div class="image_card__content">
                             <h2 class="mgb-1">Three</h2>
                             <p class="mgb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
@@ -95,7 +61,7 @@
         <div class="container flex">
             <div class="main-summary__description">
                 <div class="main-summary__description__heading">
-                    <img class="main-summary__logo" src="./assets/img/logo/01.png" alt="CJID Logo">
+                    <img class="main-summary__logo" src="./img/logo/01.png" alt="CJID Logo">
                     <h1>The Committee to Protect Journalists promotes press freedom worldwide.</h1>
                 </div>
                 <div>
@@ -107,76 +73,31 @@
                         praesentium sed. Vero aliquam explicabo aperiam, reiciendis tempora similique nam dolor nesciunt
                         dolorum officiis, voluptatum voluptas voluptatem dolores fugiat, quisquam totam ipsa tempore!
                     </p>
-                    <img src="./assets/img/summary/05.png" alt="Play video">
+                    <img src="./img/summary/05.png" alt="Play video">
                 </div>
             </div>
             <div class="main-summary__cards">
                 <div>
                     <div class="item-card mgb-2">
-                        <img src="./assets/img/summary/01.png" alt="Get Involved">
+                        <img src="./img/summary/01.png" alt="Get Involved">
                         <h2>Get Involved</h2>
                     </div>
                     <div class="item-card">
-                        <img src="./assets/img/summary/02.png" alt="Frequently Asked Questions">
+                        <img src="./img/summary/02.png" alt="Frequently Asked Questions">
                         <h2>Frequently Asked Questions</h2>
                     </div>
                 </div>
                 <div>
                     <div class="item-card mgb-2">
-                        <img src="./assets/img/summary/03.png" alt="Support Our Work">
+                        <img src="./img/summary/03.png" alt="Support Our Work">
                         <h2>Support Our Work</h2>
                     </div>
                     <div class="item-card">
-                        <img src="./assets/img/summary/04.png" alt="Our Rewards Program">
+                        <img src="./img/summary/04.png" alt="Our Rewards Program">
                         <h2>Our Rewards Program</h2>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <footer class="main-footer">
-        <div class="container flex">
-            <div class="main-footer__content">
-                <h2 class="underline">Quick Links</h2>
-                <ul>
-                    <li>Stories</li>
-                    <li>Report</li>
-                    <li>Sign In</li>
-                    <li>About CJID</li>
-                    <li>Download Data</li>
-                </ul>
-            </div>
-            <div class="main-footer__content">
-                <h2 class="underline">Get Involved</h2>
-                <ul class="social-links">
-                    <li>FB</li>
-                    <li>TW</li>
-                    <li>YT</li>
-                </ul>
-                <form action="#" class="search-form">
-                    <input type="text" name="search" id="search" placeholder="Search for reports and stories">
-                    <input type="submit" value="submit">
-                </form>
-                <p class="disclaimer-content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem eaque
-                    adipisci
-                    deserunt optio
-                    dolorem architecto tempora?</p>
-            </div>
-            <div class="main-footer__content">
-                <h2 class="underline">About CJID</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus reiciendis vero beatae
-                    molestiae
-                    praesentium mollitia neque libero incidunt, dignissimos nihil adipisci consequuntur dolores ipsa
-                    odio
-                    porro culpa excepturi corrupti maiores eum aliquam quisquam numquam veniam quibusdam. Aspernatur,
-                    tempore amet?</p>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-
-</html>
+    <%- include('./partials/footer') %>
