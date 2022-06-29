@@ -124,6 +124,10 @@ select {
     display: flex;
 }
 
+.d-none {
+    display: none;
+}
+
 /* .flex>* {
     flex-basis: 100%;
 } */
