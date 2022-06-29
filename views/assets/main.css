@@ -1,243 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&family=Open+Sans:wght@400;700&display=swap');
+
 :root {
-    --cl-yellow: rgb(255, 196, 66);
+    --cl-yellow: rgb(253, 197, 1);
     --cl-accent: rgb(255, 251, 240);
     --cl-white: white;
     --cl-black: black;
 
+    --ff-title: 'Open Sans', sans-serif;
+    --ff-regular: 'Montserrat', sans-serif;
+
     --spacer: 1rem;
 
     --shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+        0 2.8px 2.2px rgba(255, 54, 54, 0.034),
+        0 6.7px 5.3px rgba(242, 19, 19, 0.048);
 }
 
 
 /* RESETS */
-* {
-    margin: 0;
-    padding: 0;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-/* Gobals */
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
 body {
+    min-height: 100vh;
+    font-family: var(--ff-regular);
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
     background-color: var(--cl-accent);
-    color: var(--cl-black);
 }
 
-img {
-    max-width: 100%;
-    /* display: block; */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    font-family: var(--ff-title);
 }
-
 
 a {
     text-decoration: none;
-    color: var(--cl-black);
-    font-size: 1.4rem;
+
 }
 
-/* Utility */
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* components */
 .container {
-    max-width: 85vw;
+    max-width: 1200px;
+    padding: 0 2rem;
     margin: 0 auto;
+}
+
+.logo {
+    width: 60px;
 }
 
 .flex {
     display: flex;
 }
 
-.mg-2 {
-    margin: calc(var(--spacer) * 2);
+/* .flex>* {
+    flex-basis: 100%;
+} */
+
+.flow-content>*+* {
+    margin-top: var(--spacer);
 }
 
-.mgtb-2 {
-    margin: calc(var(--spacer) * 2) 0;
+.location {
+    font-size: 1.2rem;
+    color: var(--cl-yellow);
+    letter-spacing: .3rem;
 }
 
-.mgb-1 {
-    margin: calc(var(--spacer)) 0;
-}
-
-.mgb-2 {
-    margin: calc(var(--spacer) * 2) 0;
-}
-
-.mgb-1 {
-    margin: calc(var(--spacer)) 0;
-}
-
-.image-card {
-    max-width: 48%;
+.image-card,
+.regular-card {
     background-color: var(--cl-white);
     box-shadow: var(--shadow);
 }
 
-.image_card__content {
-    padding: 1.2rem 1rem;
+.image-card>div {
+    padding: 1.2rem;
 }
 
-.item-card {
-    background-color: var(--cl-white);
-    /* margin: 5rem; */
-    font-size: .9rem;
+.image-card,
+.img {
     border-radius: 8px;
 }
 
-.item-card img {
-    width: 300px;
+.image-card>img {
+    border-top-left-radius: 8000px;
+    border-bottom-left-radius: 8000px;
 }
 
-.item-card h2 {
-    padding: 1rem;
+.regular-card {
+    padding: 1.2em;
 }
 
-/* Main Navigation */
+.mtb-2 {
+    margin: 2rem 0;
+}
+
+.mtb-2 {
+    margin: 2rem 0;
+}
+
+/* navigation */
 .main-navigation {
     background-color: var(--cl-yellow);
+    padding-block: .5rem;
 }
 
-.main-navigation .flex {
-    min-height: 7vh;
+.main-navigation>.flex {
     align-items: center;
     justify-content: space-between;
+    /* gap: 2rem; */
+    /* outline: 1px solid red; */
 }
 
-.main-navigation__first {
-    display: flex;
-    align-items: center;
+.sign-in,
+.nav-items {
+    display: none;
 }
 
-.main-navigation__first .logo {
-    width: 180px;
-}
-
-.main-navigation__first .sign-in {
-    display: flex;
-    align-items: flex-end;
-    gap: .3rem;
-}
-
-.main-navigation__second {
-    display: flex;
-    gap: 2.5rem;
-}
-
-.main-navigation__second input[type=text] {
+.search-box {
+    border: none;
     background-color: var(--cl-accent);
 }
 
-/* Main Articles */
-.main-articles .flex {
-    /* justify-content: space-between; */
-    gap: 2rem;
+.search-box::placeholder {
+    font-size: .7rem;
 }
 
-.main-articles__left {
-    max-width: 60%;
+.search-box:focus {
+    outline: 1px solid var(--cl-black);
 }
 
-.main-articles__left .flex {
-    justify-content: space-between;
+.search-button {
+    padding-inline: .5em;
+    background: rgb(229, 229, 229);
+    border: none;
+    cursor: pointer;
 }
 
-.main-articles .jumbotron {
-    background: url('./img/articles/01.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 30vh;
-    /* width: 45vw; */
-    color: var(--cl-white);
+.btn {
+    padding: .45em;
+    background-color: var(--cl-yellow);
+    box-sizing: var(--shadow);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--cl-black);
+}
+
+.btn:hover,
+.btn:active {
+    opacity: 0.8;
+    font-weight: 700;
+}
+
+/* index page */
+.main-articles {
+    margin-block: 2rem;
+}
+
+.main-articles>.flex {
+    flex-direction: column;
+}
+
+.main-articles__stories,
+.main-articles__reports {
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.main-articles__stories .featured-article {
+    background: url(./img/articles/01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--cl-white);
+    font-weight: 300;
+    font-size: .8rem;
     padding: 5rem;
+    padding-left: 1rem;
 }
 
-.jumbotron h2,
-.jumbotron p {
-    max-width: 60%;
+.main-articles__stories .other-articles {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 
-.jumbotron h2 {
-    margin-bottom: calc(var(--spacer) * 1.5);
-}
-
-.main-right {
-    max-width: 100%;
-}
+/* reports */
 
 .interactive-map {
-    /* max-width: 40%; */
-    background: url('./img/map/interactive-map.png');
+    background: url(./img/map/interactive-map.png);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 30vh;
-    /* width: 45vw; */
     color: var(--cl-white);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem;
+    font-weight: 300;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 2em;
 }
 
-.main-articles__right .image-card {
-    min-width: 100%;
-    padding: 2rem 1rem;
-}
-
+/* main summary */
 .main-summary {
     background-color: var(--cl-yellow);
-}
-
-.main-summary .flex {
-    /* min-height: 70vh; */
-    justify-content: space-between;
-    align-items: center;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .main-summary__description {
-    max-width: 35%;
-}
-
-
-.main-summary__description__heading {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .main-summary__logo {
-    max-width: 240px;
+    width: 240px;
+    margin: 0 auto;
 }
 
-
-.main-summary__cards {
-    max-width: 50%;
-    display: flex;
-    gap: 2.5rem;
-}
-
+/* footer area */
 .main-footer {
-    background-color: var(--cl-black);
-    color: var(--cl-white);
+    margin-bottom: 4rem;
 }
 
-.main-footer .flex {
-    min-height: 30vh;
-    justify-content: space-between;
-    padding-top: 3rem;
-}
-
-.main-footer__content {
-    max-width: 30%;
-}
-
-
-
-@media (max-width: 1200px) {
-    .main-summary__description__heading {
-        flex-direction: column;
-    }
+.main-footer>.flex {
+    flex-direction: column;
+    gap: 2rem;
 }
