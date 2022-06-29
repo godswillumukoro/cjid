@@ -8,10 +8,10 @@ const app = express();
 // $PORT= 5000 heroku
 // $DATABASE_URL = heroku
 // const dbURI = local 'mongodb://127.0.0.1:27017/node-netninja';
-const dbURI = 'mongodb://127.0.0.1:27017/cjid';
+const dbURI = process.env.DATABASE_URI;
 mongoose
   .connect(dbURI)
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(process.env.PORT))
   .catch((err) => console.log(err));
 
 app.set('view engine', 'ejs');
